@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
     })
     .catch((error) => {
       console.log(error.message);
-      res.status(500).json(error.message);
+      res.status(500).json({ error: errror.message });
     });
 });
 

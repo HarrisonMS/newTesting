@@ -36,7 +36,3 @@ function remove(id) {
 function getAll() {
   return db("hobbits");
 }
-
-function findById(id) {
-  return null;
-}
