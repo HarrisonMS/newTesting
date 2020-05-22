@@ -1,6 +1,6 @@
 const pgConnection =
   process.env.DATABASE_URL || "postgresql://postgres@localhost/hobbits";
-// make another change and deploy
+// make another change and deploy you know the drill but this time with a wipe of the node guys
 module.exports = {
   development: {
     client: "sqlite3",

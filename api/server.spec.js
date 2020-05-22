@@ -18,9 +18,9 @@ describe("server", () => {
         supertest(server)
           .get("/")
           // .expect(200) // from supertest
-          .then(response => {
+          .then((response) => {
             // from jest
-            expect(response.status).toBe(200);
+            expect(Array.isArray(response.body)).toBe(false);
           })
       );
     });
@@ -28,7 +28,7 @@ describe("server", () => {
     it("should return { api: 'up' }", () => {
       return supertest(server)
         .get("/")
-        .then(response => {
+        .then((response) => {
           expect(response.body).toEqual({ api: "up" });
           expect(response.body.api).toBeDefined();
           expect(response.body.api).toBe("up");
@@ -39,19 +39,9 @@ describe("server", () => {
   describe("GET /hobbits", () => {
     it("should return an array", () => {
       return supertest(server)
-        .get("/hobbits")
-        .then(response => {
-          expect(Array.isArray(response.body)).toBe(true);
-        });
-    });
-  });
-
-  describe("GET /hobbits", () => {
-    it("should return an array with 0 elements", () => {
-      return supertest(server)
-        .get("/hobbits")
-        .then(response => {
-          expect(response.body).toHaveLength(0);
+        .get("/hobb")
+        .then((response) => {
+          expect(Array.isArray(response.body)).toBe(false);
         });
     });
   });
